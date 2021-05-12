@@ -11,10 +11,15 @@ import {
 } from './todoDispatch';
 
 const sendMessageError = (error)=>{
-    const { response: { data: { message } } } = error;
-    const msg = message || error.response.data;
-    showAlert("error", msg);
+   if(error.response){
+        const { response: { data: { message } } } = error;
+        const msg = message || error.response.data;
+        showAlert("error", msg);
+        setTimeout(hideAlert, 3000);
+   }else{
+    showAlert("error", "An unexpected error has occurred");
     setTimeout(hideAlert, 3000);
+   }
 }
 
 export function todoSort(sort) {
