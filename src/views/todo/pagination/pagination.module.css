@@ -1,0 +1,21 @@
+.pagination {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.pagination button {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  width: 10rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background: #00b7cf;
+  box-shadow: 0px 2px 2px #00b7cf;
+  transition: 650ms all ease;
+}
+.pagination button:hover {
+  background: #1992a1;
+}

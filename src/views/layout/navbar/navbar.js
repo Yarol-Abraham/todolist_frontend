@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import navbarCSS from './navbar.module.css';
 import bars_solid from '../../../assets/images/bars-solid.svg';
 
 const Navbar = () => {
-    const location = useLocation();
     const [ open, setOpen ] = useState(false);
     function showMenu(state) {
         const nav = document.getElementById('nav');
@@ -16,12 +15,7 @@ const Navbar = () => {
             setOpen(false);  
         };
     }
-  
-    function currentPage(page) {
-        const selectLink = document.getElementById(page);
-        //selectLink.classList.remove(navbarCSS.active);
-        selectLink.classList.add(navbarCSS.active);
-    };
+
     return ( 
         <div className={navbarCSS.content_header}>
             <div className={navbarCSS.content_header_sub}>
@@ -34,29 +28,18 @@ const Navbar = () => {
             </div>
             <nav id="nav">
                 <Link 
-                    id="all"
-                    to={{
-                        pathname: "/",
-                        state: "all"
-                    }}
-                    className={`${navbarCSS.link} ${location.state === "all" ? navbarCSS.active : ""}`} 
+                    to={"/"}
+                    className={navbarCSS.link} 
                 >All</Link>
-                <Link
-                    id="active" 
-                    to={{
-                        pathname: "/",
-                        state: "active"
-                    }}
-                    className={`${navbarCSS.link} ${location.state === "active" ? navbarCSS.active : ""}`} 
-                >Active</Link>
-                <Link
-                    id="completed" 
-                    to={{
-                        pathname: "/",
-                        state: "completed"
-                    }}
-                    className={`${navbarCSS.link} ${location.state === "completed" ? navbarCSS.active : ""}`} 
+                 <Link 
+                    to={"/incomplete"}
+                    className={navbarCSS.link} 
+                >Incomplete</Link>
+                 <Link 
+                    to={"/completed"}
+                    className={navbarCSS.link} 
                 >Completed</Link>
+          
             </nav>
         </div>
      );

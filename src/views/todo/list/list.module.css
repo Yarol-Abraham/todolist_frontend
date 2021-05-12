@@ -1,0 +1,50 @@
+.list_item {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  transition: 650ms all 650 ease-in;
+}
+.list_item:hover {
+  background-color: rgba(189, 189, 189, 0.301);
+}
+
+.list_item .li_delete_all {
+  justify-content: flex-end;
+}
+.list_item .li_Item_1,
+.list_item .li_Item_2 {
+  display: flex;
+  align-items: center;
+}
+.list_item input[type="checkbox"] {
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.list_item label {
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.label_completed {
+  text-decoration: line-through;
+}
+/* component completed */
+.list_item .btn_delete {
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 3rem;
+  height: 2.5rem;
+}
